@@ -1,3 +1,6 @@
-exports.getPosts = (req, res) => {
-  res.send("");
-};
+const express = require("express");
+const postController = require("../controllers/post");
+const router = express.Router();
+router.get("/", postController.getPosts);
+router.post("/post", postController.createPost);
+module.exports = router;
