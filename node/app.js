@@ -4,8 +4,11 @@ const app = express();
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const postRoutes = require("./routes/post");
-
+const expressValidator = require("express-validator");
 app.use(morgan("dev"));
+app.use(express.json());
+
+app.use(expressValidator());
 app.use("/", postRoutes);
 
 mongoose.connect(
@@ -15,6 +18,10 @@ mongoose.connect(
     console.log("mongodb connected");
   }
 );
+
+mongoose.connection.on("error", (err) => {
+  console.log(`DB connection error: ${err.message}`);
+});
 
 const port = process.env.PORT || 3000;
 //listen to the given port
