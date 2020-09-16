@@ -1,0 +1,28 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlu255/social_media.git"
+  },
+  "keywords": [
+    "node",
+    "api"
+  ],
+  "author": "Diana Lu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlu255/social_media/issues"
+  },
+  "homepage": "https://github.com/jlu255/social_media#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
